@@ -50,6 +50,8 @@ The full `z` is only materialized at scatter/gather boundaries. The entire trunk
 
 ## Quick Start
 
+**First time here?** See **[docs/GETTING_STARTED.md](docs/GETTING_STARTED.md)** for a step-by-step guide: install Boltz-2, clone this repo, prepare input YAML, and run DAP.
+
 ### Prerequisites
 
 - **2+ GPUs** on the same node (NVLink recommended)
@@ -103,6 +105,8 @@ torchrun --nproc_per_node=2 boltz_dap_v2/run_boltz_dap_v2.py \
 | `--seed` | None | Random seed for reproducibility |
 
 **Confidence** (pLDDT, pTM, iPTM, PAE, PDE) is always computed when the model supports it; no flag required.
+
+For a full **prediction guide** (entrypoint, launch, input data, CLI options, pipeline stages), see [docs/boltz2_dap_prediction.md](docs/boltz2_dap_prediction.md).
 
 ### SLURM Example
 
