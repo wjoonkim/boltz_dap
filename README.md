@@ -56,6 +56,20 @@ The full `z` is only materialized at scatter/gather boundaries. The entire trunk
 - Python 3.10+, PyTorch 2.x with CUDA
 - [Boltz 2](https://github.com/jwohlwend/boltz) installed (`pip install boltz`)
 
+### Tested environment
+
+| Item | Used in development |
+|------|---------------------|
+| GPU | NVIDIA H800 (2, 4, or 8 per node) |
+| CUDA | Compatible with PyTorch 2.x |
+| GPU counts tested | 2, 4, 8 GPUs (e.g. trimer/hexamer on 4; 9MME N≈4642 on 8) |
+| Settings tested | **Boltz2 default**: `recycling_steps=3`, `sampling_steps=200`, `diffusion_samples=1` · **AF3 default**: `recycling_steps=10`, `sampling_steps=200`, `diffusion_samples=25` |
+| Workloads | Trimer (e.g. 3×519 aa), hexamer (6×~519 aa, 25 samples with `--use_flex_attention_chunked`), 9MME (N≈4642, 8 GPUs) |
+
+Other GPU models (A100, V100, etc.) should work with 2+ GPUs; memory per GPU scales with shard size.
+
+**Example log file:** [example_hexamer_25cif_full.log](example_hexamer_25cif_full.log) — full run that produced 25 CIF files (hexamer, 4 GPUs, `--use_flex_attention_chunked`, AF3 defaults). Large (~8.8 MB) but useful as a reference.
+
 ### Running
 
 ```bash

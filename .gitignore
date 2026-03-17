@@ -3,6 +3,8 @@ __pycache__/
 *.egg-info/
 output_*/
 *.log
+# Example log for the repo (full run, 25 CIF)
+!example_hexamer_25cif_full.log
 *.pt
 *.pth
 .env
