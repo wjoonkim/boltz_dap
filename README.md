@@ -190,9 +190,9 @@ DAP produces results with minor floating-point differences from single-GPU Boltz
 If you found this project useful, please cite:
 - [Boltz-2](https://github.com/jwohlwend/boltz) — Base model
 - [FastFold](https://github.com/hpcaitech/FastFold) — DAP communication primitives (adapted)
-- [AlphaFold 3](https://doi.org/10.1038/s41586-024-07487-w) — Triangle operations architecture (adapted)
+- [AlphaFold 3](https://github.com/google-deepmind/alphafold3) — Triangle operations architecture (adapted)
 
-We would also appreciate it if you could cite this repository in any work that uses or builds upon it. A formal citation will be provided in a formal preprint describing our implementation, benchmarks, and (hopefully good) results on our AAV multimer structure prediction with this approach.
+We would also appreciate it if you could cite this repository in any work that uses or builds upon it. A formal citation will be provided in a preprint describing our implementation, benchmarks, and results on our AAV multimer structure prediction with this approach.
 
 ## License
 
