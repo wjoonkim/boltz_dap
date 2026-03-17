@@ -210,3 +210,5 @@ We sincerely thank:
 - the developers and maintainers of all the packages used in this project!
 
 This project was developed with generous compute support in HKUST HPC4 and SuperPOD from The Hong Kong University of Science and Technology (HKUST). This work was conducted at the lab of Prof. Bonnie Danqing Zhu in the Department of Chemical and Biological Engineering (CBE). 
+
+We note the parallel development of [Fold-CP](https://github.com/NVIDIA-Digital-Bio/boltz-cp) by the team at NVIDIA Digital Bio, which also enables multi-GPU Boltz 2 inference (and also training) with a different approach. We look forward to comparing and learning from each other's implementations!
