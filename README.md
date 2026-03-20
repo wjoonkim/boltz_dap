@@ -62,10 +62,10 @@ The full `z` is only materialized at scatter/gather boundaries. The entire trunk
 
 | Item | Used in development |
 |------|---------------------|
-| GPU | NVIDIA RTX 5880 Ada (48 GB VRAM)\ H800 (80 GB VRAM) |
+| GPU | NVIDIA RTX 5880 Ada (48 GB VRAM) <br> NVIDIA H800 (80 GB VRAM) |
 | CUDA | Compatible with PyTorch 2.x |
 | GPU counts tested | 2, 4, 8 GPUs (e.g. trimer/hexamer on 4; 9MME N≈4642 on 8) |
-| Settings tested | **Boltz-2 default**: `recycling_steps=3`, `sampling_steps=200`, `diffusion_samples=1` \ **AF3 default**: `recycling_steps=10`, `sampling_steps=200`, `diffusion_samples=25` |
+| Settings tested | **Boltz-2 default**: `recycling_steps=3`, `sampling_steps=200`, `diffusion_samples=1`<br> **AF3 default**: `recycling_steps=10`, `sampling_steps=200`, `diffusion_samples=25` |
 | Workloads | AAV2 VP3 Trimer (e.g. 3×519 aa), AAV2 VP3 Hexamer (6×~519 aa, 25 samples with `--use_flex_attention_chunked`), 9MME (N≈4642, 8 GPUs) |
 
 Other GPU models (A100, V100, etc.) should work with 2+ GPUs; memory per GPU scales with shard size.
@@ -117,7 +117,6 @@ For a full **prediction guide** (entrypoint, launch, input data, CLI options, pi
 #SBATCH --ntasks-per-node=4
 #SBATCH --gpus-per-task=1
 #SBATCH --mem=128G
-#SBATCH --time=1:00:00
 
 srun torchrun --nproc_per_node=4 \
     boltz_dap_v2/run_boltz_dap_v2.py \
@@ -191,6 +190,7 @@ If you found this project useful, please cite:
 - [Boltz-2](https://github.com/jwohlwend/boltz) — Base model
 - [FastFold](https://github.com/hpcaitech/FastFold) — DAP communication primitives (adapted)
 - [AlphaFold 3](https://github.com/google-deepmind/alphafold3) — Triangle operations architecture (adapted)
+- [ColabFold](https://github.com/sokrypton/ColabFold) — ColabFold MSA server
 
 We would also appreciate it if you could cite this repository in any work that uses or builds upon it. A formal citation will be provided in a preprint describing our implementation, benchmarks, and results on our AAV multimer structure prediction with this approach.
 
